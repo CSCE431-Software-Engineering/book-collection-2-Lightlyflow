@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "books#index"
-  resources :books
+  resources :books do
+    member do 
+      get :delete
+    end
+  end
 
 end
