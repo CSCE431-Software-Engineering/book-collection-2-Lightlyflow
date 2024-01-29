@@ -1,0 +1,25 @@
+<%= link_to("Back to Library", books_path, :class => 'back-link') %>
+
+<h2>Show Book</h2>
+
+<%= link_to("Edit", book_path(@book, class: "action edit")) %>
+<%= link_to("Delete", book_path(@book, class: "action delete")) %>
+
+<table style="">
+  <tr>
+    <th>Title:</th>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <th>Author:</th>
+    <td><%= @book.author %></td>
+  </tr>
+  <tr>
+    <th>Price:</th>
+    <td><%= @book.price %></td>
+  </tr>
+  <tr>
+    <th>Published on:</th>
+    <td><%= @book.published %></td>
+  </tr>
+</table>
