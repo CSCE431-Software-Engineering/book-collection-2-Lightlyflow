@@ -1,0 +1,27 @@
+<%= link_to("Back to Library", books_path, :class => 'back-link') %>
+
+<h2>Add a Book</h2>
+
+<%= form_for( @book , remote: false) do |f| %>
+<table>
+    <tr>
+        <th>Title</th>
+        <td><%= f.text_field(:title) %></td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:author) %></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><%= f.number_field(:price) %></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td><%= f.date_field(:published) %></td>
+    </tr>
+</table>
+<div class="form-buttons">
+    <%= f.submit("Create Book") %>
+</div>
+<% end %>   
