@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(task_params)
+    @book = Book.new(book_params)
     if @book.save
       redirect_to books_path
     else
@@ -21,11 +21,21 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    else
+      render('edit')
+    end
   end
 
   private 
   
-  def task_params
+  def book_params
     params.require(:book).permit(
       :title, 
       :author, 
