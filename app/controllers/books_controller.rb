@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, notice: "Book created"
     else
-      render('new')
+      redirect_to books_path, notice: "Error creating book"
     end
   end
 
